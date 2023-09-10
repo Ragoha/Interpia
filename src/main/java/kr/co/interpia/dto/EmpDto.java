@@ -1,0 +1,150 @@
+package kr.co.interpia.dto;
+
+import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+public class EmpDto {
+
+	@Setter
+	@Getter
+	@Builder
+	@AllArgsConstructor
+	public static class RequestDto {
+		
+		private String empCd = "";			//사원 코드
+		private String empId = "";			//사원 아이디
+		private String empPw = "";			//사원 패스워드
+		private String korNm = "";			//한글 이름
+		private String engNm = "";			//영어 이름
+		private String chaNm = "";			//한문 이름
+		private String regNb = "";			//주민등록번호
+		private String imgNm = "";			//사진 이름
+		private String imgPath = "";		//사진 경로
+		private String birthDt = "";		//생년월일
+		private String birthTp = "";		//생일 타입
+		private String gender = "";			//성별
+		private String matrial = "";		//결혼유무
+		private String year = "";			//연차
+		private String salTp = "";			//급여지급유형
+		private String desJob = "";			//희망직무
+		private String joinTp = "";			//입사유형
+		private String addr = "";			//주소
+		private String addrDtl = "";		//상세주소
+		private String contact = "";		//연락처
+		private String email = "";			//이메일
+		private String techLv = "";			//기술등급
+		private String drink = "";			//주량
+	}
+	
+	@Setter
+	@Getter
+	@Builder
+	@AllArgsConstructor
+	public static class ResponseDto implements Serializable {
+		
+		private String empCd = "";			//사원 코드
+		private String empId = "";			//사원 아이디
+		private String empPw = "";			//사원 패스워드
+		private String korNm = "";			//한글 이름
+		private String engNm = "";			//영어 이름
+		private String chaNm = "";			//한문 이름
+		private String regNb = "";			//주민등록번호
+		private String imgNm = "";			//사진 이름
+		private String imgPath = "";		//사진 경로
+		private String birthDt = "";		//생년월일
+		private String birthTp = "";		//생일 타입
+		private String gender = "";			//성별
+		private String matrial = "";		//결혼유무
+		private String year = "";			//연차
+		private String salTp = "";			//급여지급유형
+		private String desJob = "";			//희망직무
+		private String joinTp = "";			//입사유형
+		private String addr = "";			//주소
+		private String addrDtl = "";		//상세주소
+		private String contact = "";		//연락처
+		private String email = "";			//이메일
+		private String techLv = "";			//기술등급
+		private String drink = "";			//주량
+		
+	}
+	
+	@Setter
+	@Getter
+	@Builder
+	@ToString
+	@AllArgsConstructor
+	public static class insert {
+		
+		private String korNm = "";			//한글 이름
+		private String engNm = "";			//영어 이름
+		private String chaNm = "";			//한문 이름
+		private String regNb = "";			//주민등록번호
+		private String imgNm = "";			//사진 파일명
+		private String imgPath = "";		//사진 파일경로
+		private String birthDt = "";		//생년월일
+		private String birthTp = "";		//생일 타입
+		private String gender = "";			//성별
+		private String matrial = "";		//결혼유무
+		private String year = "";			//연차
+		private String salTp = "";			//급여지급유형
+		private String desJob = "";			//희망직무
+		private String joinTp = "";			//입사유형
+		private String addr = "";			//주소
+		private String addrDtl = "";		//상세주소
+		private String contact = "";		//연락처
+		private String email = "";			//이메일
+		private String techLv = "";			//기술등급
+		private String drink = "";			//주량
+		private String insertDt = "";		//등록일자
+		private String modifyDt = "";		//수정일자
+		
+	}
+	
+	public static class update {
+		private String korNm = "";			//한글 이름
+		private String engNm = "";			//영어 이름
+		private String chaNm = "";			//한문 이름
+		private String regNb = "";			//주민등록번호
+		private String imgNm = "";			//사진 파일명
+		private String imgPath = "";		//사진 파일경로
+		private String birthDt = "";		//생년월일
+		private String birthTp = "";		//생일 타입
+		private String gender = "";			//성별
+		private String matrial = "";		//결혼유무
+		private String year = "";			//연차
+		private String salTp = "";			//급여지급유형
+		private String desJob = "";			//희망직무
+		private String joinTp = "";			//입사유형
+		private String addr = "";			//주소
+		private String addrDtl = "";		//상세주소
+		private String contact = "";		//연락처
+		private String email = "";			//이메일
+		private String techLv = "";			//기술등급
+		private String drink = "";			//주량
+		private String insertDt = "";		//등록일자
+		private String modifyDt = "";		//수정일자
+	}
+	
+	@ToString
+	@Setter
+	@Getter
+	@Builder
+	public static class delete {
+		private String empCd = "";
+	}
+	
+	public static class detail {
+		private String empCd = "";
+	}
+	
+	public static class search {
+		private String keyword = "";
+	}
+	
+	
+}

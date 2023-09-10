@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import kr.co.interpia.domain.Emp;
-import kr.co.interpia.dto.EmpDTO;
+import kr.co.interpia.dto.EmpDto;
 
 public class EmpConverter {
 
