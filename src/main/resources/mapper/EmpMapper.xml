@@ -3,8 +3,54 @@
 <mapper namespace="kr.co.interpia.mapper.EmpMapper">
 
 	<select id="getEmpList" resultType="Emp">
-		SELECT * FROM emp;
+		SELECT * FROM EMP;
 	</select>
+	
+	<insert id="insertEmp" parameterType="Emp">
+		INSERT INTO EMP (
+			EMP_CD, EMP_ID, EMP_PW, KOR_NM, ENG_NM, CHA_NM,
+			REG_NB, IMG_NM, IMG_PATH, BIRTH_DT, BIRTH_TP, GENDER,
+			MARTIAL, YEAR, SAL_TP, DES_JOB, JOIN_TP, ADDR, ADDR_DTL,
+			PHONE, EMAIL, TECH_LV, DRINK, INSERT_DT, MODIFY_DT
+		)
+		VALUES (
+			#{empCd}, #{empId}, #{empPw}, #{korNm}, #{engNm}, #{chaNm},
+			#{regNb}, #{imgNm}, #{imgPath}, #{birthDt}, #{birthTp}, #{gender},
+			#{matrial}, #{year}, #{salTp}, #{desJob}, #{joinTp}, #{addr}, #{addrDtl},
+			#{phone}, #{email}, #{techLv}, #{drink}, #{insertDt}, #{modifyDt}
+		)
+	</insert>
+	
+	<update id="updateEmp" parameterType="Emp">
+	    UPDATE EMP SET
+	        KOR_NM = #{korNm},
+	        ENG_NM = #{engNm},
+	        CHA_NM = #{chaNm},
+	        REG_NB = #{regNb},
+	        IMG_NM = #{imgNm},
+	        IMG_PATH = #{imgPath},
+	        BIRTH_DT = #{birthDt},
+	        BIRTH_TP = #{birthTp},
+	        GENDER = #{gender},
+	        MARTIAL = #{matrial},
+	        YEAR = #{year},
+	        SAL_TP = #{salTp},
+	        DES_JOB = #{desJob},
+	        JOIN_TP = #{joinTp},
+	        ADDR = #{addr},
+	        ADDR_DTL = #{addrDtl},
+	        PHONE = #{phone},
+	        EMAIL = #{email},
+	        TECH_LV = #{techLv},
+	        DRINK = #{drink},
+	        MODIFY_DT = #{modifyDt}
+	    WHERE EMP_CD = #{empCd}
+	</update>
 
+	
+	<delete id="deleteEmp" parameterType="Emp">
+		DELETE FROM EMP
+		WHERE EMP_CD = #{empCd}
+	</delete>
 
 </mapper>

@@ -13,6 +13,7 @@
 
 	<context:property-placeholder location="classpath:config/database.properties" />
 	<mybatis-spring:scan base-package="kr.co.interpia.mapper"/>
+	<context:component-scan base-package="kr.co.interpia.service" />
 
 	<!-- Data Source -->
 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">

@@ -34,9 +34,11 @@ public class Emp {
 	private String joinTp = "";			//입사유형
 	private String addr = "";			//주소
 	private String addrDtl = "";		//상세주소
-	private String contact = "";		//연락처
+	private String phone = "";			//연락처
 	private String email = "";			//이메일
 	private String techLv = "";			//기술등급
 	private String drink = "";			//주량
+	private String insertDt = "";		//등록일자
+	private String modifyDt = "";		//수정일자
 	
 }

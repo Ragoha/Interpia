@@ -9,9 +9,15 @@
 
 	<typeAliases>
 		<typeAlias type="kr.co.interpia.domain.Emp" alias="Emp" />
+		<typeAlias type="kr.co.interpia.domain.Pjt" alias="Pjt" />
+		<typeAlias type="kr.co.interpia.domain.Cert" alias="Cert" />
+		<typeAlias type="kr.co.interpia.domain.Skill" alias="Skill" />
 	</typeAliases>
 	<mappers>
 		<mapper resource="mapper/EmpMapper.xml" />
+		<mapper resource="mapper/PjtMapper.xml" />
+		<mapper resource="mapper/CertMapper.xml" />
+		<mapper resource="mapper/SkillMapper.xml" />
 	</mappers>
 
 </configuration>
