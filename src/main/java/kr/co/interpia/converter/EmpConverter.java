@@ -7,6 +7,8 @@ import java.util.Date;
 import kr.co.interpia.domain.Emp;
 import kr.co.interpia.dto.EmpDto.DeleteRequestDto;
 import kr.co.interpia.dto.EmpDto.InsertRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectOneRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectOneResponseDto;
 import kr.co.interpia.dto.EmpDto.UpdateRequestDto;
 import kr.co.interpia.util.CommonUtil;
 
@@ -84,6 +86,43 @@ public class EmpConverter {
 				.build();
 		
 		return emp;
+	}
+
+	public static Emp selectOneDtoToModel(SelectOneRequestDto empDto) {
+		
+		Emp emp = Emp.builder()
+				.empCd(empDto.getEmpCd())
+				.build();
+		
+		return emp;
+	}
+	
+	public static SelectOneResponseDto ModelToSelectOneResponseDto(Emp emp) {
+		
+		return SelectOneResponseDto.builder()
+				.empCd(emp.getEmpCd())
+				.empId(emp.getEmpId())
+				.korNm(emp.getKorNm())
+				.engNm(emp.getEngNm())
+				.chaNm(emp.getChaNm())
+				.regNb(emp.getRegNb())
+				.imgNm(emp.getImgNm())
+				.imgPath(emp.getImgPath())
+				.birthDt(emp.getBirthDt())
+				.birthTp(emp.getBirthTp())
+				.gender(emp.getGender())
+				.matrial(emp.getMatrial())
+				.year(emp.getYear())
+				.salTp(emp.getSalTp())
+				.desJob(emp.getDesJob())
+				.joinTp(emp.getJoinTp())
+				.addr(emp.getAddr())
+				.addrDtl(emp.getAddrDtl())
+				.phone(emp.getPhone())
+				.email(emp.getEmail())
+				.techLv(emp.getTechLv())
+				.drink(emp.getDrink())
+				.build();
 	}
 	
 

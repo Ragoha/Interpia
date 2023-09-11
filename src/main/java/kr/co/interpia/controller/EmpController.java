@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.co.interpia.dto.EmpDto.DeleteRequestDto;
 import kr.co.interpia.dto.EmpDto.InsertRequestDto;
 import kr.co.interpia.dto.EmpDto.SelectListResponseDto;
+import kr.co.interpia.dto.EmpDto.SelectOneRequestDto;
 import kr.co.interpia.dto.EmpDto.SelectOneResponseDto;
 import kr.co.interpia.dto.EmpDto.UpdateRequestDto;
 import kr.co.interpia.service.EmpService;
@@ -36,9 +37,11 @@ public class EmpController {
 	}
 	
 	@GetMapping("/emp/{empCd}")
-	public ResponseEntity<SelectOneResponseDto> selectOne(){
+	public ResponseEntity<SelectOneResponseDto> selectOne(@PathVariable("empCd") SelectOneRequestDto empDto ){
 		
-		SelectOneResponseDto rEmpDto = empService.selectOneEmp();
+		System.out.println(empDto.toString());
+		
+		SelectOneResponseDto rEmpDto = empService.selectOneEmp(empDto);
 		
 	    return new ResponseEntity<>(rEmpDto, HttpStatus.OK);
 

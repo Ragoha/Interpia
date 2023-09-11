@@ -8,6 +8,8 @@ import kr.co.interpia.converter.EmpConverter;
 import kr.co.interpia.domain.Emp;
 import kr.co.interpia.dto.EmpDto.DeleteRequestDto;
 import kr.co.interpia.dto.EmpDto.InsertRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectOneRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectOneResponseDto;
 import kr.co.interpia.dto.EmpDto.UpdateRequestDto;
 import kr.co.interpia.mapper.EmpMapper;
 import lombok.RequiredArgsConstructor;
@@ -23,6 +25,17 @@ public class EmpServiceImpl implements EmpService{
 	public List<Emp> getEmpList() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+
+	@Override
+	public SelectOneResponseDto selectOneEmp(SelectOneRequestDto empDto) {
+		
+		Emp rEmp = empMapper.selectOneEmp(EmpConverter.selectOneDtoToModel(empDto));
+		
+		System.out.println(rEmp.toString());
+		
+		return EmpConverter.ModelToSelectOneResponseDto(rEmp);
 	}
 
 
@@ -47,5 +60,7 @@ public class EmpServiceImpl implements EmpService{
 		empMapper.updateEmp(EmpConverter.updateDtoToModel(empDto));
 		
 	}
+
+
 
 }

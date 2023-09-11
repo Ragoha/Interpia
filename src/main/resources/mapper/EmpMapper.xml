@@ -6,6 +6,15 @@
 		SELECT * FROM EMP;
 	</select>
 	
+	<select id="selectOneEmp" parameterType="Emp" resultType="Emp">
+		SELECT EMP_CD, EMP_ID, KOR_NM, ENG_NM, CHA_NM, REG_NB,
+			IMG_NM, IMG_PATH, BIRTH_DT, BIRTH_TP, GENDER, MATRIAL,
+			YEAR, SAL_TP, DES_JOB, JOIN_TP, ADDR, ADDR_DTL,
+			PHONE, EMAIL, TECHLV, DRINK
+		FROM EMP
+		WHERE EMP_CD = #{empCd}
+	</select>
+	
 	<insert id="insertEmp" parameterType="Emp">
 		INSERT INTO EMP (
 			EMP_CD, EMP_ID, EMP_PW, KOR_NM, ENG_NM, CHA_NM,
