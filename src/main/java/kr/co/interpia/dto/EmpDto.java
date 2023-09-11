@@ -25,6 +25,16 @@ public class EmpDto {
 		
 	}
 	
+
+	@Getter
+	@Builder
+	@ToString
+	@AllArgsConstructor
+	@NoArgsConstructor
+	public static class SelectOneRequestDto {
+		private String empCd;				//사원 번호
+	}
+	
 	@ToString
 	@Getter
 	@Builder
@@ -54,8 +64,7 @@ public class EmpDto {
 		private String email;				//이메일
 		private String techLv;				//기술등급
 		private String drink;				//주량
-		private String insertDt;			//등록일자
-		private String modifyDt;			//수정일자
+
 		
 	}
 	
