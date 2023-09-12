@@ -2,8 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.interpia.mapper.EmpMapper">
 
-	<select id="getEmpList" resultType="Emp">
-		SELECT * FROM EMP;
+	<select id="selectListEmp" resultType="map">
+		SELECT EMP.EMP_CD,EMP.EMP_NM, EMP.REG_NB, EMP.GENDER, EMP.TECH_LV, EMP.YEAR, WORK.CLIENT
+		FROM EMP
+		JOIN WORK 
+		ON WORK.EMP_CD = EMP.EMP_CD;
 	</select>
 	
 	<select id="selectOneEmp" parameterType="Emp" resultType="Emp">
