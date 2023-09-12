@@ -15,31 +15,31 @@ import lombok.ToString;
 @AllArgsConstructor
 public class Emp {
 	
-	private String empCd = "";			//»ç¿ø ÄÚµå
-	private String empId = "";			//»ç¿ø ¾ÆÀÌµğ
-	private String empPw = "";			//»ç¿ø ÆĞ½º¿öµå
-	private String korNm = "";			//ÇÑ±Û ÀÌ¸§
-	private String engNm = "";			//¿µ¾î ÀÌ¸§
-	private String chaNm = "";			//ÇÑ¹® ÀÌ¸§
-	private String regNb = "";			//ÁÖ¹Îµî·Ï¹øÈ£
-	private String imgNm = "";			//»çÁø ÀÌ¸§
-	private String imgPath = "";		//»çÁø °æ·Î
-	private String birthDt = "";		//»ı³â¿ùÀÏ
-	private String birthTp = "";		//»ıÀÏ Å¸ÀÔ
-	private String gender = "";			//¼ºº°
-	private String marital = "";		//°áÈ¥À¯¹«
-	private String year = "";			//¿¬Â÷
-	private String salTp = "";			//±Ş¿©Áö±ŞÀ¯Çü
-	private String desJob = "";			//Èñ¸ÁÁ÷¹«
-	private String joinTp = "";			//ÀÔ»çÀ¯Çü
-	private String zipCd = "";			//¿ìÆí¹øÈ£
-	private String addr = "";			//ÁÖ¼Ò
-	private String addrDtl = "";		//»ó¼¼ÁÖ¼Ò
-	private String phone = "";			//¿¬¶ôÃ³
-	private String email = "";			//ÀÌ¸ŞÀÏ
-	private String techLv = "";			//±â¼úµî±Ş
-	private String drink = "";			//ÁÖ·®
-	private String insertDt = "";		//µî·ÏÀÏÀÚ
-	private String modifyDt = "";		//¼öÁ¤ÀÏÀÚ
+	private String empCd = "";			//ì‚¬ì› ì½”ë“œ
+	private String empId = "";			
+	private String empPw = "";			
+	private String korNm = "";			
+	private String engNm = "";			
+	private String chaNm = "";			
+	private String regNb = "";			
+	private String imgNm = "";			
+	private String imgPath = "";		
+	private String birthDt = "";		
+	private String birthTp = "";		
+	private String gender = "";			
+	private String marital = "";		
+	private String year = "";			
+	private String salTp = "";			
+	private String desJob = "";			
+	private String joinTp = "";			
+	private String zipCd = "";			
+	private String addr = "";			
+	private String addrDtl = "";		
+	private String phone = "";			
+	private String email = "";			
+	private String techLv = "";			
+	private String drink = "";			
+	private String insertDt = "";		
+	private String modifyDt = "";		
 	
 }

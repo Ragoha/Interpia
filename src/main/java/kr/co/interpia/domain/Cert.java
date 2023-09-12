@@ -2,11 +2,11 @@ package kr.co.interpia.domain;
 
 public class Cert {
 
-	private String empCd = "";			//»ç¿ø ÄÚµå
-	private String certCd = "";			//ÀÚ°İÁõ ÄÚµå
-	private String certNm = "";			//ÀÚ°İÁõ ÀÌ¸§
-	private String certDt = "";			//ÀÚ°İÁõ ÃëµæÀÏ
-	private String insertDt = "";		//µî·ÏÀÏÀÚ
-	private String modifyDt = "";		//¼öÁ¤ÀÏÀÚ
+	private String empCd = "";			//ì‚¬ì› ì½”ë“œ
+	private String certCd = "";			
+	private String certNm = "";		
+	private String certDt = "";			
+	private String insertDt = "";		
+	private String modifyDt = "";	
 	
 }
