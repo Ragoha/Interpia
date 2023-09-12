@@ -31,7 +31,7 @@ public class EmpController {
 	@GetMapping("/emp")
 	public ResponseEntity<List<SelectListResponseDto>> selectList(){
 		
-		List<SelectListResponseDto> rEmpDtoList = new ArrayList<SelectListResponseDto>();
+		List<SelectListResponseDto> rEmpDtoList = empService.selectListEmp();
 		
 		return new ResponseEntity<List<SelectListResponseDto>>(rEmpDtoList, HttpStatus.OK);
 	}

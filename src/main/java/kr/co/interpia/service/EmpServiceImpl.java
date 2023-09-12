@@ -1,6 +1,7 @@
 package kr.co.interpia.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -8,6 +9,7 @@ import kr.co.interpia.converter.EmpConverter;
 import kr.co.interpia.domain.Emp;
 import kr.co.interpia.dto.EmpDto.DeleteRequestDto;
 import kr.co.interpia.dto.EmpDto.InsertRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectListResponseDto;
 import kr.co.interpia.dto.EmpDto.SelectOneRequestDto;
 import kr.co.interpia.dto.EmpDto.SelectOneResponseDto;
 import kr.co.interpia.dto.EmpDto.UpdateRequestDto;
@@ -31,17 +33,15 @@ public class EmpServiceImpl implements EmpService{
 	@Override
 	public SelectOneResponseDto selectOneEmp(SelectOneRequestDto empDto) {
 		
-		Emp rEmp = empMapper.selectOneEmp(EmpConverter.selectOneDtoToModel(empDto));
+		Emp rEmp = empMapper.selectOneEmp(EmpConverter.convertToModel(empDto));
 		
-		System.out.println(rEmp.toString());
-		
-		return EmpConverter.ModelToSelectOneResponseDto(rEmp);
+		return EmpConverter.convertToSelectOneResponseDto(rEmp);
 	}
 
 
 	@Override
 	public void insertEmp(InsertRequestDto empDto) {
-		empMapper.insertEmp(EmpConverter.insertDtoToModel(empDto));
+		empMapper.insertEmp(EmpConverter.convertToModel(empDto));
 		
 	}
 
@@ -49,7 +49,7 @@ public class EmpServiceImpl implements EmpService{
 	@Override
 	public void deleteEmp(DeleteRequestDto empDto) {
 		
-		empMapper.deleteEmp(EmpConverter.deleteDtoToModel(empDto));
+		empMapper.deleteEmp(EmpConverter.convertToModel(empDto));
 		
 	}
 
@@ -57,8 +57,22 @@ public class EmpServiceImpl implements EmpService{
 	@Override
 	public void updateEmp(UpdateRequestDto empDto) {
 		
-		empMapper.updateEmp(EmpConverter.updateDtoToModel(empDto));
+		empMapper.updateEmp(EmpConverter.convertToModel(empDto));
 		
+	}
+
+
+	@Override
+	public List<SelectListResponseDto> selectListEmp() {
+		
+//		List<Emp> rEmpList = empMapper.selectListEmp();
+		
+		List<Map<String, Object>> rEmpList = empMapper.selectListEmp();
+		
+		System.out.println(rEmpList.toString());
+		System.out.println(rEmpList);
+		
+		return EmpConverter.convertToSelectListResponseDtoList(rEmpList);
 	}
 
 

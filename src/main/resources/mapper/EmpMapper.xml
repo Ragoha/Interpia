@@ -2,15 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.co.interpia.mapper.EmpMapper">
 
-	<select id="getEmpList" resultType="Emp">
-		SELECT * FROM EMP;
+	<select id="selectListEmp" resultType="map">
+		SELECT EMP.EMP_CD, EMP.REG_NB, EMP.GENDER, EMP.TECH_LV, EMP.YEAR, WORK.CLIENT
+		FROM EMP
+		JOIN WORK 
+		ON WORK.EMP_CD = EMP.EMP_CD;
 	</select>
 	
 	<select id="selectOneEmp" parameterType="Emp" resultType="Emp">
 		SELECT EMP_CD, EMP_ID, KOR_NM, ENG_NM, CHA_NM, REG_NB,
-			IMG_NM, IMG_PATH, BIRTH_DT, BIRTH_TP, GENDER, MATRIAL,
-			YEAR, SAL_TP, DES_JOB, JOIN_TP, ADDR, ADDR_DTL,
-			PHONE, EMAIL, TECHLV, DRINK
+			IMG_NM, IMG_PATH, BIRTH_DT, BIRTH_TP, GENDER, MARITAL,
+			YEAR, SAL_TP, DES_JOB, JOIN_TP, ZIP_CD ,ADDR, ADDR_DTL,
+			PHONE, EMAIL, TECH_LV, DRINK
 		FROM EMP
 		WHERE EMP_CD = #{empCd}
 	</select>
@@ -19,13 +22,13 @@
 		INSERT INTO EMP (
 			EMP_CD, EMP_ID, EMP_PW, KOR_NM, ENG_NM, CHA_NM,
 			REG_NB, IMG_NM, IMG_PATH, BIRTH_DT, BIRTH_TP, GENDER,
-			MARTIAL, YEAR, SAL_TP, DES_JOB, JOIN_TP, ADDR, ADDR_DTL,
+			MARITAL, YEAR, SAL_TP, DES_JOB, JOIN_TP, ZIP_CD, ADDR, ADDR_DTL,
 			PHONE, EMAIL, TECH_LV, DRINK, INSERT_DT, MODIFY_DT
 		)
 		VALUES (
 			#{empCd}, #{empId}, #{empPw}, #{korNm}, #{engNm}, #{chaNm},
 			#{regNb}, #{imgNm}, #{imgPath}, #{birthDt}, #{birthTp}, #{gender},
-			#{matrial}, #{year}, #{salTp}, #{desJob}, #{joinTp}, #{addr}, #{addrDtl},
+			#{marital}, #{year}, #{salTp}, #{desJob}, #{joinTp}, #{zipCd}, #{addr}, #{addrDtl},
 			#{phone}, #{email}, #{techLv}, #{drink}, #{insertDt}, #{modifyDt}
 		)
 	</insert>
@@ -41,11 +44,12 @@
 	        BIRTH_DT = #{birthDt},
 	        BIRTH_TP = #{birthTp},
 	        GENDER = #{gender},
-	        MARTIAL = #{matrial},
+	        MARITAL = #{marital},
 	        YEAR = #{year},
 	        SAL_TP = #{salTp},
 	        DES_JOB = #{desJob},
 	        JOIN_TP = #{joinTp},
+	        ZIP_CD = #{zipCd},
 	        ADDR = #{addr},
 	        ADDR_DTL = #{addrDtl},
 	        PHONE = #{phone},

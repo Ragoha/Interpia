@@ -27,11 +27,12 @@ public class Emp {
 	private String birthDt = "";		//생년월일
 	private String birthTp = "";		//생일 타입
 	private String gender = "";			//성별
-	private String matrial = "";		//결혼유무
+	private String marital = "";		//결혼유무
 	private String year = "";			//연차
 	private String salTp = "";			//급여지급유형
 	private String desJob = "";			//희망직무
 	private String joinTp = "";			//입사유형
+	private String zipCd = "";			//우편번호
 	private String addr = "";			//주소
 	private String addrDtl = "";		//상세주소
 	private String phone = "";			//연락처

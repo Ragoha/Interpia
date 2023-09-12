@@ -1,12 +1,14 @@
 package kr.co.interpia.converter;
 
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import kr.co.interpia.domain.Emp;
 import kr.co.interpia.dto.EmpDto.DeleteRequestDto;
 import kr.co.interpia.dto.EmpDto.InsertRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectListResponseDto;
 import kr.co.interpia.dto.EmpDto.SelectOneRequestDto;
 import kr.co.interpia.dto.EmpDto.SelectOneResponseDto;
 import kr.co.interpia.dto.EmpDto.UpdateRequestDto;
@@ -14,7 +16,7 @@ import kr.co.interpia.util.CommonUtil;
 
 public class EmpConverter {
 	
-	public static Emp insertDtoToModel(InsertRequestDto empDto) {
+	public static Emp convertToModel(InsertRequestDto empDto) {
 
 		Emp emp = Emp.builder()
 				.empCd(empDto.getEmpCd())
@@ -29,11 +31,12 @@ public class EmpConverter {
 				.birthDt(empDto.getBirthDt())
 				.birthTp(empDto.getBirthTp())
 				.gender(empDto.getGender())
-				.matrial(empDto.getMatrial())
+				.marital(empDto.getMarital())
 				.year(empDto.getYear())
 				.salTp(empDto.getSalTp())
 				.desJob(empDto.getDesJob())
 				.joinTp(empDto.getJoinTp())
+				.zipCd(empDto.getZipCd())
 				.addr(empDto.getAddr())
 				.addrDtl(empDto.getAddrDtl())
 				.phone(empDto.getPhone())
@@ -49,7 +52,7 @@ public class EmpConverter {
 	
 
 
-	public static Emp updateDtoToModel(UpdateRequestDto empDto) {
+	public static Emp convertToModel(UpdateRequestDto empDto) {
 		
 		Emp emp = Emp.builder()
 				.empCd(empDto.getEmpCd())
@@ -62,11 +65,12 @@ public class EmpConverter {
 				.birthDt(empDto.getBirthDt())
 				.birthTp(empDto.getBirthTp())
 				.gender(empDto.getGender())
-				.matrial(empDto.getMatrial())
+				.marital(empDto.getMarital())
 				.year(empDto.getYear())
 				.salTp(empDto.getSalTp())
 				.desJob(empDto.getDesJob())
 				.joinTp(empDto.getJoinTp())
+				.zipCd(empDto.getZipCd())
 				.addr(empDto.getAddr())
 				.addrDtl(empDto.getAddrDtl())
 				.phone(empDto.getPhone())
@@ -79,7 +83,7 @@ public class EmpConverter {
 		return emp;
 	}
 	
-	public static Emp deleteDtoToModel(DeleteRequestDto empDto) {
+	public static Emp convertToModel(DeleteRequestDto empDto) {
 		
 		Emp emp = Emp.builder()
 				.empCd(empDto.getEmpCd())
@@ -88,7 +92,7 @@ public class EmpConverter {
 		return emp;
 	}
 
-	public static Emp selectOneDtoToModel(SelectOneRequestDto empDto) {
+	public static Emp convertToModel(SelectOneRequestDto empDto) {
 		
 		Emp emp = Emp.builder()
 				.empCd(empDto.getEmpCd())
@@ -97,7 +101,7 @@ public class EmpConverter {
 		return emp;
 	}
 	
-	public static SelectOneResponseDto ModelToSelectOneResponseDto(Emp emp) {
+	public static SelectOneResponseDto convertToSelectOneResponseDto(Emp emp) {
 		
 		return SelectOneResponseDto.builder()
 				.empCd(emp.getEmpCd())
@@ -111,11 +115,12 @@ public class EmpConverter {
 				.birthDt(emp.getBirthDt())
 				.birthTp(emp.getBirthTp())
 				.gender(emp.getGender())
-				.matrial(emp.getMatrial())
+				.marital(emp.getMarital())
 				.year(emp.getYear())
 				.salTp(emp.getSalTp())
 				.desJob(emp.getDesJob())
 				.joinTp(emp.getJoinTp())
+				.zipCd(emp.getZipCd())
 				.addr(emp.getAddr())
 				.addrDtl(emp.getAddrDtl())
 				.phone(emp.getPhone())
@@ -124,6 +129,23 @@ public class EmpConverter {
 				.drink(emp.getDrink())
 				.build();
 	}
+	
+	public static List<SelectListResponseDto> convertToSelectListResponseDtoList(List<Map<String, Object>> empList) {
+	    return empList.stream()
+	            .map((Map<String, Object> emp) -> SelectListResponseDto.builder()
+	                    .empCd((String) emp.get("EMP_CD"))
+	                    .empNm((String) emp.get("KOR_NM"))
+	                    .regNb((String) emp.get("REG_NB"))
+	                    .gender((String) emp.get("GENDER"))
+	                    .techLv((String) emp.get("TECH_LV"))
+	                    .year((String) emp.get("YEAR"))
+	                    .client((String) emp.get("CLIENT"))
+	                    .build())
+	            .collect(Collectors.toList());
+	}
+
+	
+	
 	
 
 //	public static EmpDto convertToDto(Emp emp) {
