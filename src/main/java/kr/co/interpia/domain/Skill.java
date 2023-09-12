@@ -2,11 +2,11 @@ package kr.co.interpia.domain;
 
 public class Skill {
 
-	private String empCd = "";			//»ç¿ø ÄÚµå
-	private String skillCd = "";		//º¸À¯±â¼ú ÄÚµå
-	private String skillNm = "";		//º¸À¯±â¼ú ÀÌ¸§
-	private String skillPf = "";		//º¸À¯±â¼ú µî±Ş
-	private String insertDt = "";		//µî·ÏÀÏÀÚ
-	private String modifyDt = "";		//¼öÁ¤ÀÏÀÚ
+	private String empCd = "";			//ì‚¬ì› ì½”ë“œ
+	private String skillCd = "";		
+	private String skillNm = "";		
+	private String skillPf = "";		
+	private String insertDt = "";		
+	private String modifyDt = "";		
 	
 }
