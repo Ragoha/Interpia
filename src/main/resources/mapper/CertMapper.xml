@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.interpia.mapper.CertMapper">
+
+	<insert id="insertCert" parameterType="Cert">
+		INSERT INTO CERT (
+			EMP_CD, CERT_CD, CERT_NM, CERT_DT, INSERT_DT, MODIFY_DT
+		)
+		VALUES (
+			#{empCd}, #{certCd}, #{certNm}, #{certDt}, #{insertDt}, #{modifyDt}
+		) 
+	</insert>
+	
+	<update id="updateCert" parameterType="Cert">
+		UPDATE CERT SET 
+			CERT_NM = #{certNm},
+			CERT_DT = #{certDt},
+			MODIFY_DT = #{modifyDt}
+		WHERE EMP_CD = #{empCd}
+			AND CERT_CD = #{certCd}
+	</update>
+	
+	<delete id="deleteCert" parameterType="Cert">
+		DELETE FROM CERT
+		WHERE EMP_CD = #{empCd}
+			AND CERT_CD = #{certCd}
+	</delete>
+	
+	<select id="selectListCert" parameterType="Cert" resultType="Cert">
+		SELECT * 
+		FROM CERT
+		WHERE EMP_CD = #{empCd}
+	</select>
+	
+	<select id="getCountCertByEmpCd" parameterType="Cert" resultType="int">
+		SELECT COUNT(*)
+		FROM CERT
+		WHERE EMP_CD = #{empCd}
+	</select>
+
+</mapper>
