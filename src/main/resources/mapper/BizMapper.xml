@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.interpia.mapper.BizMapper">
+
+	<insert id="insertBiz" parameterType="Biz">
+		INSERT INTO BIZ (
+		CO_CD,
+		CO_NM, CO_NB, CEO, SECTOR, BIZ_TP, ZIP_CD, ADDR, ADDR_DTL, PHONE, FAX,
+		CONTACT, MOBILE, INSERT_DT, MODIFY_DT
+		)
+		VALUES (
+		#{coCd}, #{coNm},
+		#{coNb}, #{ceo}, #{sector}, #{bizTp}, #{zipCd}, #{addr}, #{addrDtl},
+		#{phone}, #{fax}, #{contact}, #{mobile}, #{insertDt}, #{modifyDt}
+		)
+
+	</insert>
+	
+	<select id="getBizList" parameterType="Biz" resultType="Biz">
+		SELECT * FROM BIZ
+	</select>
+	
+	<select id="selectBiz" parameterType="Biz" resultType="Biz">
+		SELECT * FROM BIZ
+		WHERE CO_CD = #{coCd}
+	</select>
+	
+	<update id="updateBiz" parameterType="Biz">
+		UPDATE BIZ SET
+			CO_NM = #{coNm},
+			CO_NB = #{coNb},
+			CEO = #{ceo},
+			SECTOR = #{sector},
+			BIZ_TP = #{bizTp},
+			ZIP_CD = #{zipCd},
+			ADDR = #{addr},
+			ADDR_DTL = #{addrDtl},
+			PHONE = #{phone},
+			FAX = #{fax},
+			CONTACT = #{contact},
+			MOBILE = #{mobile},
+			MODIFY_DT = #{modifyDt}
+		WHERE CO_CD = #{coCd}
+	</update>
+	
+	<delete id="deleteBiz" parameterType="Biz">
+		DELETE FROM BIZ
+		WHERE CO_CD = #{coCd}
+	</delete>
+
+</mapper>

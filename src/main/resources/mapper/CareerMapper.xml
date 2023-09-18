@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.interpia.mapper.CareerMapper">
+
+	<insert id="insertCareer" parameterType="Career">
+	INSERT INTO CAREER (
+		EMP_CD, EXP_CD, COMPANY, POS, EXP_PER, ROLE, INSERT_DT, MODIFY_DT
+	)
+	VALUES (
+		#{empCd}, #{expCd}, #{company}, #{pos}, #{expPer}, #{role}, #{insertDt}, #{modifyDt}
+	)
+	
+	</insert>
+	
+</mapper>

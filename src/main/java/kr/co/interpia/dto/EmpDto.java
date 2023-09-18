@@ -32,6 +32,7 @@ public class EmpDto {
 	@AllArgsConstructor
 	@NoArgsConstructor
 	public static class SelectOneEmpRequestDto {
+
 		private String empCd;				//��� ��ȣ
 	}
 	
