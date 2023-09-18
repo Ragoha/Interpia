@@ -4,9 +4,6 @@ import java.util.List;
 import java.util.Map;
 
 import kr.co.interpia.domain.Emp;
-import kr.co.interpia.dto.EmpDto.InsertRequestDto;
-import kr.co.interpia.dto.EmpDto.SelectOneRequestDto;
-import kr.co.interpia.dto.EmpDto.SelectOneResponseDto;
 
 public interface EmpMapper {
 

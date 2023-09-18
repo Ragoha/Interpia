@@ -1,6 +1,5 @@
 package kr.co.interpia.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -13,12 +12,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import kr.co.interpia.dto.EmpDto.DeleteRequestDto;
-import kr.co.interpia.dto.EmpDto.InsertRequestDto;
-import kr.co.interpia.dto.EmpDto.SelectListResponseDto;
-import kr.co.interpia.dto.EmpDto.SelectOneRequestDto;
-import kr.co.interpia.dto.EmpDto.SelectOneResponseDto;
-import kr.co.interpia.dto.EmpDto.UpdateRequestDto;
+import kr.co.interpia.dto.EmpDto.DeleteEmpRequestDto;
+import kr.co.interpia.dto.EmpDto.InsertEmpRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectListEmpResponseDto;
+import kr.co.interpia.dto.EmpDto.SelectOneEmpRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectOneEmpResponseDto;
+import kr.co.interpia.dto.EmpDto.UpdateEmpRequestDto;
 import kr.co.interpia.service.EmpService;
 import lombok.RequiredArgsConstructor;
 
@@ -29,26 +28,26 @@ public class EmpController {
 	private final EmpService empService;
 	
 	@GetMapping("/emp")
-	public ResponseEntity<List<SelectListResponseDto>> selectList(){
+	public ResponseEntity<List<SelectListEmpResponseDto>> selectListEmp(){
 		
-		List<SelectListResponseDto> rEmpDtoList = empService.selectListEmp();
+		List<SelectListEmpResponseDto> rEmpDtoList = empService.selectListEmp();
 		
-		return new ResponseEntity<List<SelectListResponseDto>>(rEmpDtoList, HttpStatus.OK);
+		return new ResponseEntity<List<SelectListEmpResponseDto>>(rEmpDtoList, HttpStatus.OK);
 	}
 	
 	@GetMapping("/emp/{empCd}")
-	public ResponseEntity<SelectOneResponseDto> selectOne(@PathVariable("empCd") SelectOneRequestDto empDto ){
+	public ResponseEntity<SelectOneEmpResponseDto> selectOneEmp(@PathVariable("empCd") SelectOneEmpRequestDto empDto ){
 		
 		System.out.println(empDto.toString());
 		
-		SelectOneResponseDto rEmpDto = empService.selectOneEmp(empDto);
+		SelectOneEmpResponseDto rEmpDto = empService.selectOneEmp(empDto);
 		
 	    return new ResponseEntity<>(rEmpDto, HttpStatus.OK);
 
 	}
 
 	@PostMapping("/emp")
-	public ResponseEntity<Void> insertEmp(@RequestBody InsertRequestDto empDto) {
+	public ResponseEntity<Void> insertEmp(@RequestBody InsertEmpRequestDto empDto) {
 
 		empService.insertEmp(empDto);
 		
@@ -56,7 +55,7 @@ public class EmpController {
 	}
 	
 	@PutMapping("/emp")
-	public ResponseEntity<Void> uupdateEmp(@RequestBody UpdateRequestDto empDto) {
+	public ResponseEntity<Void> uupdateEmp(@RequestBody UpdateEmpRequestDto empDto) {
 		
 		empService.updateEmp(empDto);
 		
@@ -64,7 +63,7 @@ public class EmpController {
 	}
 	
 	@DeleteMapping("/emp/{empCd}")
-	public ResponseEntity<Void> deleteEmp(@PathVariable("empCd") DeleteRequestDto empDto) {
+	public ResponseEntity<Void> deleteEmp(@PathVariable("empCd") DeleteEmpRequestDto empDto) {
 		
 		
 		empService.deleteEmp(empDto);

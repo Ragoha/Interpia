@@ -3,25 +3,25 @@ package kr.co.interpia.service;
 import java.util.List;
 
 import kr.co.interpia.domain.Emp;
-import kr.co.interpia.dto.EmpDto.DeleteRequestDto;
-import kr.co.interpia.dto.EmpDto.InsertRequestDto;
-import kr.co.interpia.dto.EmpDto.SelectListResponseDto;
-import kr.co.interpia.dto.EmpDto.SelectOneRequestDto;
-import kr.co.interpia.dto.EmpDto.SelectOneResponseDto;
-import kr.co.interpia.dto.EmpDto.UpdateRequestDto;
+import kr.co.interpia.dto.EmpDto.DeleteEmpRequestDto;
+import kr.co.interpia.dto.EmpDto.InsertEmpRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectListEmpResponseDto;
+import kr.co.interpia.dto.EmpDto.SelectOneEmpRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectOneEmpResponseDto;
+import kr.co.interpia.dto.EmpDto.UpdateEmpRequestDto;
 
 public interface EmpService {
 
-	List<Emp> getEmpList();
+	public List<Emp> getEmpList();
 	
-	void insertEmp(InsertRequestDto empDto);
+	public void insertEmp(InsertEmpRequestDto empDto);
 
-	void deleteEmp(DeleteRequestDto empDto);
+	public void deleteEmp(DeleteEmpRequestDto empDto);
 
-	void updateEmp(UpdateRequestDto empDto);
+	public void updateEmp(UpdateEmpRequestDto empDto);
 
-	SelectOneResponseDto selectOneEmp(SelectOneRequestDto empDto);
+	public SelectOneEmpResponseDto selectOneEmp(SelectOneEmpRequestDto empDto);
 
-	List<SelectListResponseDto> selectListEmp();
+	public List<SelectListEmpResponseDto> selectListEmp();
 }
  
