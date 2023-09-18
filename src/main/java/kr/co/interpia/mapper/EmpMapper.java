@@ -22,5 +22,4 @@ public interface EmpMapper {
 
 	public List<Map<String, Object>> selectListEmp();
 	
-	
 }
