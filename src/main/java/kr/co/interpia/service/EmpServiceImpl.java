@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 
 import kr.co.interpia.converter.EmpConverter;
 import kr.co.interpia.domain.Emp;
-import kr.co.interpia.dto.EmpDto.DeleteRequestDto;
-import kr.co.interpia.dto.EmpDto.InsertRequestDto;
-import kr.co.interpia.dto.EmpDto.SelectListResponseDto;
-import kr.co.interpia.dto.EmpDto.SelectOneRequestDto;
-import kr.co.interpia.dto.EmpDto.SelectOneResponseDto;
-import kr.co.interpia.dto.EmpDto.UpdateRequestDto;
+import kr.co.interpia.dto.EmpDto.DeleteEmpRequestDto;
+import kr.co.interpia.dto.EmpDto.InsertEmpRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectListEmpResponseDto;
+import kr.co.interpia.dto.EmpDto.SelectOneEmpRequestDto;
+import kr.co.interpia.dto.EmpDto.SelectOneEmpResponseDto;
+import kr.co.interpia.dto.EmpDto.UpdateEmpRequestDto;
 import kr.co.interpia.mapper.EmpMapper;
 import lombok.RequiredArgsConstructor;
 
@@ -31,7 +31,7 @@ public class EmpServiceImpl implements EmpService{
 	
 
 	@Override
-	public SelectOneResponseDto selectOneEmp(SelectOneRequestDto empDto) {
+	public SelectOneEmpResponseDto selectOneEmp(SelectOneEmpRequestDto empDto) {
 		
 		Emp rEmp = empMapper.selectOneEmp(EmpConverter.convertToModel(empDto));
 		
@@ -40,14 +40,14 @@ public class EmpServiceImpl implements EmpService{
 
 
 	@Override
-	public void insertEmp(InsertRequestDto empDto) {
+	public void insertEmp(InsertEmpRequestDto empDto) {
 		empMapper.insertEmp(EmpConverter.convertToModel(empDto));
 		
 	}
 
 
 	@Override
-	public void deleteEmp(DeleteRequestDto empDto) {
+	public void deleteEmp(DeleteEmpRequestDto empDto) {
 		
 		empMapper.deleteEmp(EmpConverter.convertToModel(empDto));
 		
@@ -55,7 +55,7 @@ public class EmpServiceImpl implements EmpService{
 
 
 	@Override
-	public void updateEmp(UpdateRequestDto empDto) {
+	public void updateEmp(UpdateEmpRequestDto empDto) {
 		
 		empMapper.updateEmp(EmpConverter.convertToModel(empDto));
 		
@@ -63,7 +63,7 @@ public class EmpServiceImpl implements EmpService{
 
 
 	@Override
-	public List<SelectListResponseDto> selectListEmp() {
+	public List<SelectListEmpResponseDto> selectListEmp() {
 		
 //		List<Emp> rEmpList = empMapper.selectListEmp();
 		

@@ -13,15 +13,15 @@ public class EmpDto {
 	@Builder
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class SelectListResponseDto {
+	public static class SelectListEmpResponseDto {
 		
-		private String empCd;				//»ç¿ø ¹øÈ£
-		private String empNm;				//»ç¿ø ÀÌ¸§
-		private String regNb;				//ÁÖ¹Îµî·Ï¹øÈ£
-		private String gender;				//¼ºº°
-		private String techLv;				//±â¼úµî±Þ
-		private String year;				//°æ·Â
-		private String client;				//°Å·¡Ã³
+		private String empCd;				//ï¿½ï¿½ï¿½ ï¿½ï¿½È£
+		private String empNm;				//ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+		private String regNb;				//ï¿½Ö¹Îµï¿½Ï¹ï¿½È£
+		private String gender;				//ï¿½ï¿½ï¿½ï¿½
+		private String techLv;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		private String year;				//ï¿½ï¿½ï¿½
+		private String client;				//ï¿½Å·ï¿½Ã³
 		
 	}
 	
@@ -31,8 +31,8 @@ public class EmpDto {
 	@ToString
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class SelectOneRequestDto {
-		private String empCd;				//»ç¿ø ¹øÈ£
+	public static class SelectOneEmpRequestDto {
+		private String empCd;				//ï¿½ï¿½ï¿½ ï¿½ï¿½È£
 	}
 	
 	@ToString
@@ -40,31 +40,31 @@ public class EmpDto {
 	@Builder
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class SelectOneResponseDto {
+	public static class SelectOneEmpResponseDto {
 		
-		private String empCd;				//»ç¿ø ÄÚµå
-		private String empId;				//»ç¿ø ID
-		private String korNm;				//ÇÑ±Û ÀÌ¸§
-		private String engNm;				//¿µ¾î ÀÌ¸§
-		private String chaNm;				//ÇÑ¹® ÀÌ¸§
-		private String regNb;				//ÁÖ¹Îµî·Ï¹øÈ£
-		private String imgNm;				//»çÁø ÆÄÀÏ¸í
-		private String imgPath;				//»çÁø ÆÄÀÏ°æ·Î
-		private String birthDt;				//»ý³â¿ùÀÏ
-		private String birthTp;;			//»ýÀÏ Å¸ÀÔ
-		private String gender;				//¼ºº°
-		private String marital;				//°áÈ¥À¯¹«
-		private String year;				//¿¬Â÷
-		private String salTp;				//±Þ¿©Áö±ÞÀ¯Çü
-		private String desJob;				//Èñ¸ÁÁ÷¹«
-		private String joinTp;				//ÀÔ»çÀ¯Çü
-		private String zipCd;				//¿ìÆí¹øÈ£
-		private String addr;				//ÁÖ¼Ò
-		private String addrDtl;				//»ó¼¼ÁÖ¼Ò
-		private String phone;				//¿¬¶ôÃ³
-		private String email;				//ÀÌ¸ÞÀÏ
-		private String techLv;				//±â¼úµî±Þ
-		private String drink;				//ÁÖ·®
+		private String empCd;				//ï¿½ï¿½ï¿½ ï¿½Úµï¿½
+		private String empId;				//ï¿½ï¿½ï¿½ ID
+		private String korNm;				//ï¿½Ñ±ï¿½ ï¿½Ì¸ï¿½
+		private String engNm;				//ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½
+		private String chaNm;				//ï¿½Ñ¹ï¿½ ï¿½Ì¸ï¿½
+		private String regNb;				//ï¿½Ö¹Îµï¿½Ï¹ï¿½È£
+		private String imgNm;				//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¸ï¿½
+		private String imgPath;				//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï°ï¿½ï¿½
+		private String birthDt;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		private String birthTp;;			//ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½
+		private String gender;				//ï¿½ï¿½ï¿½ï¿½
+		private String marital;				//ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½
+		private String year;				//ï¿½ï¿½ï¿½ï¿½
+		private String salTp;				//ï¿½Þ¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		private String desJob;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		private String joinTp;				//ï¿½Ô»ï¿½ï¿½ï¿½ï¿½ï¿½
+		private String zipCd;				//ï¿½ï¿½ï¿½ï¿½ï¿½È£
+		private String addr;				//ï¿½Ö¼ï¿½
+		private String addrDtl;				//ï¿½ï¿½ï¿½Ö¼ï¿½
+		private String phone;				//ï¿½ï¿½ï¿½ï¿½Ã³
+		private String email;				//ï¿½Ì¸ï¿½ï¿½ï¿½
+		private String techLv;				//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		private String drink;				//ï¿½Ö·ï¿½
 
 		
 	}
@@ -74,7 +74,7 @@ public class EmpDto {
 	@Builder
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class SearchRequestDto {
+	public static class SearchEmpRequestDto {
 		private String keyword = "";
 	}
 	
@@ -83,34 +83,34 @@ public class EmpDto {
 	@ToString
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class InsertRequestDto {
+	public static class InsertEmpRequestDto {
 		
-		private String empCd;				//»ç¿ø ÄÚµå
-		private String empId;				//»ç¿ø ¾ÆÀÌµð
-		private String empPw;				//»ç¿ø ºñ¹Ð¹øÈ£
-		private String korNm;				//ÇÑ±Û ÀÌ¸§
-		private String engNm;				//¿µ¾î ÀÌ¸§
-		private String chaNm;				//ÇÑ¹® ÀÌ¸§
-		private String regNb;				//ÁÖ¹Îµî·Ï¹øÈ£
-		private String imgNm;				//»çÁø ÆÄÀÏ¸í
-		private String imgPath;				//»çÁø ÆÄÀÏ°æ·Î
-		private String birthDt;				//»ý³â¿ùÀÏ
-		private String birthTp;;			//»ýÀÏ Å¸ÀÔ
-		private String gender;				//¼ºº°
-		private String marital;				//°áÈ¥À¯¹«
-		private String year;				//¿¬Â÷
-		private String salTp;				//±Þ¿©Áö±ÞÀ¯Çü
-		private String desJob;				//Èñ¸ÁÁ÷¹«
-		private String joinTp;				//ÀÔ»çÀ¯Çü
-		private String zipCd;				//¿ìÆí¹øÈ£
-		private String addr;				//ÁÖ¼Ò
-		private String addrDtl;				//»ó¼¼ÁÖ¼Ò
-		private String phone;				//¿¬¶ôÃ³
-		private String email;				//ÀÌ¸ÞÀÏ
-		private String techLv;				//±â¼úµî±Þ
-		private String drink;				//ÁÖ·®
-		private String insertDt;			//µî·ÏÀÏÀÚ
-		private String modifyDt;			//¼öÁ¤ÀÏÀÚ
+		private String empCd;				
+		private String empId;				
+		private String empPw;				
+		private String korNm;				
+		private String engNm;				
+		private String chaNm;				
+		private String regNb;				
+		private String imgNm;				
+		private String imgPath;				
+		private String birthDt;				
+		private String birthTp;;			
+		private String gender;				
+		private String marital;				
+		private String year;			
+		private String salTp;				
+		private String desJob;				
+		private String joinTp;				
+		private String zipCd;				
+		private String addr;			
+		private String addrDtl;			
+		private String phone;			
+		private String email;			
+		private String techLv;			
+		private String drink;				
+		private String insertDt;			
+		private String modifyDt;			
 		
 	}
 	
@@ -119,30 +119,30 @@ public class EmpDto {
 	@ToString
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class UpdateRequestDto {
+	public static class UpdateEmpRequestDto {
 		
-		private String empCd;				//»ç¿ø ÄÚµå
-		private String korNm;				//ÇÑ±Û ÀÌ¸§
-		private String engNm;				//¿µ¾î ÀÌ¸§
-		private String chaNm;				//ÇÑ¹® ÀÌ¸§
-		private String regNb;				//ÁÖ¹Îµî·Ï¹øÈ£
-		private String imgNm;				//»çÁø ÆÄÀÏ¸í
-		private String imgPath;				//»çÁø ÆÄÀÏ°æ·Î
-		private String birthDt;				//»ý³â¿ùÀÏ
-		private String birthTp;;			//»ýÀÏ Å¸ÀÔ
-		private String gender;				//¼ºº°
-		private String marital;				//°áÈ¥À¯¹«
-		private String year;				//¿¬Â÷
-		private String salTp;				//±Þ¿©Áö±ÞÀ¯Çü
-		private String desJob;				//Èñ¸ÁÁ÷¹«
-		private String joinTp;				//ÀÔ»çÀ¯Çü
-		private String zipCd;				//¿ìÆí¹øÈ£
-		private String addr;				//ÁÖ¼Ò
-		private String addrDtl;				//»ó¼¼ÁÖ¼Ò
-		private String phone;				//¿¬¶ôÃ³
-		private String email;				//ÀÌ¸ÞÀÏ
-		private String techLv;				//±â¼úµî±Þ
-		private String drink;				//ÁÖ·®
+		private String empCd;				
+		private String korNm;				
+		private String engNm;				
+		private String chaNm;				
+		private String regNb;				
+		private String imgNm;			
+		private String imgPath;			
+		private String birthDt;			
+		private String birthTp;;			
+		private String gender;			
+		private String marital;			
+		private String year;			
+		private String salTp;			
+		private String desJob;			
+		private String joinTp;			
+		private String zipCd;			
+		private String addr;			
+		private String addrDtl;			
+		private String phone;			
+		private String email;			
+		private String techLv;			
+		private String drink;			
 		
 	}
 	
@@ -151,7 +151,7 @@ public class EmpDto {
 	@Builder
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class DeleteRequestDto {
+	public static class DeleteEmpRequestDto {
 		private String empCd = "";
 	}
 	

@@ -2,20 +2,20 @@ package kr.co.interpia.domain;
 
 public class Pjt {
 
-	private String empCd = "";			//»ç¿ø ÄÚµå
-	private String pjtCd = "";			//ÇÁ·ÎÁ§Æ® ÄÚµå
-	private String pjtNm = "";			//ÇÁ·ÎÁ§Æ® ÀÌ¸§
-	private String pjtPer = "";			//ÇÁ·ÎÁ§Æ® ±â°£
-	private String client = "";			//°í°´»ç
-	private String company = "";		//±Ù¹«È¸»ç
-	private String devFld = "";			//°³¹ßºĞ¾ß
-	private String role = "";			//¿ªÇÒ
-	private String devTp = "";			//±âÁ¾
-	private String os = "";				//OS
-	private String lang = "";			//¾ğ¾î
-	private String dbms = "";			//DBMS
-	private String tool = "";			//TOOL
-	private String comm = "";			//Åë½Å
-	private String other = "";			//±âÅ¸
+	private String empCd = "";			//ì‚¬ì› ì½”ë“œ
+	private String pjtCd = "";			
+	private String pjtNm = "";			
+	private String pjtPer = "";			
+	private String client = "";			
+	private String company = "";		
+	private String devFld = "";			
+	private String role = "";			
+	private String devTp = "";			
+	private String os = "";				
+	private String lang = "";			
+	private String dbms = "";			
+	private String tool = "";			
+	private String comm = "";			
+	private String other = "";			
 	
 }
