@@ -18,6 +18,7 @@ public class CertDto {
 		private int certCd;
 		private String certNm;
 		private String certDt;
+		private String state;
 		
 	}
 	
