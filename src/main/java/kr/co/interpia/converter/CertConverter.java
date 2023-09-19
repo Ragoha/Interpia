@@ -28,9 +28,18 @@ public class CertConverter {
 	
 	public static CertResponseDto convertToCertResponseDto(Cert cert) {
 		
-//		CertResponseDto 
+		CertResponseDto certResponseDto = CertResponseDto.builder()
+				.certCd(cert.getCertCd())
+				.certNm(cert.getCertNm())
+				.certDt(cert.getCertDt())
+				.build();
 		
-		return null;
+		return certResponseDto;
 		
+	}
+	
+	public static List<CertResponseDto> convertToCertResponseDtoList(List<Cert> certList){
+		
+		return certList.stream().map(CertConverter::convertToCertResponseDto).collect(Collectors.toList());
 	}
 }
