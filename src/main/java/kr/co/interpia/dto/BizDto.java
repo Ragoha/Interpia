@@ -16,7 +16,7 @@ public class BizDto {
 	@NoArgsConstructor
 	public static class InsertRequestDto {
 		
-		private int coCd;
+		private String coCd;
 		private String coNm;			
 		private String coNb;			
 		private String ceo;			
@@ -40,7 +40,7 @@ public class BizDto {
 	@AllArgsConstructor
 	@NoArgsConstructor
 	public static class SelectRequestDto {
-		private int coCd;
+		private String coCd;
 	}
 	
 	@Getter
@@ -50,7 +50,7 @@ public class BizDto {
 	@NoArgsConstructor
 	public static class SelectResponseDto {
 		
-		private int coCd;
+		private String coCd;
 		private String coNm;			
 		private String coNb;			
 		private String ceo;			
@@ -75,7 +75,7 @@ public class BizDto {
 	@NoArgsConstructor
 	public static class UpdateRequestDto {
 		
-		private int coCd;
+		private String coCd;
 		private String coNm;			
 		private String coNb;			
 		private String ceo;			
@@ -99,7 +99,16 @@ public class BizDto {
 	@AllArgsConstructor
 	@NoArgsConstructor
 	public static class DeleteRequestDto {
-		private int coCd;
+		private String coCd;
+	}
+	
+	@ToString
+	@Getter
+	@Builder
+	@AllArgsConstructor
+	@NoArgsConstructor
+	public static class SearchRequestDto {
+		private String keyword = "";
 	}
 
 }

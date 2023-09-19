@@ -55,7 +55,7 @@ public class EmpController {
 	}
 	
 	@PutMapping("/emp")
-	public ResponseEntity<Void> uupdateEmp(@RequestBody UpdateEmpRequestDto empDto) {
+	public ResponseEntity<Void> updateEmp(@RequestBody UpdateEmpRequestDto empDto) {
 		
 		empService.updateEmp(empDto);
 		

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.co.interpia.domain.Biz;
 import kr.co.interpia.dto.BizDto.DeleteRequestDto;
 import kr.co.interpia.dto.BizDto.InsertRequestDto;
+import kr.co.interpia.dto.BizDto.SearchRequestDto;
 import kr.co.interpia.dto.BizDto.SelectRequestDto;
 import kr.co.interpia.dto.BizDto.SelectResponseDto;
 import kr.co.interpia.dto.BizDto.UpdateRequestDto;
@@ -35,13 +36,13 @@ public class BizController {
 		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 	
-	@GetMapping("/biz")
-	public ResponseEntity<List<Biz>> getBizList(){
-		List<Biz> bizList = bizService.getBizList();
-		
-		return new ResponseEntity<List<Biz>>(bizList,HttpStatus.OK);
-		
-	}
+//	@GetMapping("/biz")
+//	public ResponseEntity<List<Biz>> getBizList(){
+//		List<Biz> bizList = bizService.getBizList();
+//		
+//		return new ResponseEntity<List<Biz>>(bizList,HttpStatus.OK);
+//		
+//	}
 	
 	@GetMapping("/biz/{coCd}")
 	public ResponseEntity<SelectResponseDto> selectBiz(@PathVariable("coCd") SelectRequestDto bizDto){
@@ -67,6 +68,13 @@ public class BizController {
 		System.out.println(bizDto.toString());
 		
 		return new ResponseEntity<Void>(HttpStatus.OK);
+	}
+	
+	@GetMapping("/biz")
+	public ResponseEntity<List<Biz>> getBizByCoNm(SearchRequestDto bizDto){
+		List<Biz> bizList = bizService.getBizByCoNm(bizDto);
+		
+		return new ResponseEntity<List<Biz>>(bizList,HttpStatus.OK);
 	}
 
 }
