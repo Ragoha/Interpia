@@ -1,14 +1,19 @@
 package kr.co.interpia.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import kr.co.interpia.converter.CertConverter;
+import kr.co.interpia.converter.SkillConverter;
 import kr.co.interpia.domain.Cert;
 import kr.co.interpia.domain.Skill;
+import kr.co.interpia.dto.CertDto.CertRequestDto;
+import kr.co.interpia.dto.CertDto.CertResponseDto;
 import kr.co.interpia.dto.CertSkillDto.CertSkillRequestDto;
+import kr.co.interpia.dto.CertSkillDto.CertSkillResponseDto;
+import kr.co.interpia.dto.CertSkillDto.SelectCertSkillRequestDto;
+import kr.co.interpia.dto.SkillDto.SkillRequestDto;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -22,61 +27,61 @@ public class CertSkillServiceImpl implements CertSkillService{
 	public void registerCertSkill(CertSkillRequestDto certSkillRequestDto) {
 		
 		String empCd = certSkillRequestDto.getEmpCd();
-		List<Cert> certList = CertConverter.convertToModelList(certSkillRequestDto.getCertRequestDtoList());
-		certList.forEach(cert -> {
+		List<CertRequestDto> certDtoList = certSkillRequestDto.getCertRequestDtoList();
+		
+		certDtoList.forEach(certDto -> {
+			
+			String state = certDto.getState();
+			
+			Cert cert = CertConverter.convertToModel(certDto);
 			cert.initEmpCd(empCd);
+			
+			if(state.equals("inserted")) {
+				certService.insertCert(cert);
+			}else if(state.equals("updated")) {
+				certService.updateCert(cert);
+			}else if(state.equals("deleted")) {
+				certService.deleteCert(cert);
+			}
+			
 		});
 		
-		int countCert = certService.getCountCertByEmpCd(
-				Cert.builder()
-				.empCd(empCd)
-				.build()
-				);
+		List<SkillRequestDto> skillDtoList = certSkillRequestDto.getSkillRequestDtoList();
 		
-		System.out.println(countCert);
-		if(countCert == 0) {
-			certList.forEach(cert -> {
-				certService.insertCert(cert);
-			});
-		}
-		else if(countCert == certList.size()) {
-			certList.forEach(cert -> {
-				certService.updateCert(cert);
-			});
-		}else if(countCert < certList.size() || countCert > certList.size()) {
-			int compare = certList.size() - countCert;
-			if(compare > 0) {
-				List<Cert> uCertList = certList.subList(0, countCert);
-				List<Cert> iCertList = certList.subList(countCert, certList.size());
-				uCertList.forEach(cert -> {
-					certService.updateCert(cert);
-				});
-				iCertList.forEach(cert -> {
-					certService.insertCert(cert);
-				});
-			}else {
-				System.out.println(compare);
-				int uToIndex = countCert + compare;
-				List<Cert> uCertList = certList.subList(0, uToIndex);
-				System.out.println(uCertList);
-				for(int i = uToIndex; i < countCert; i++) {
-					System.out.println(i+1);
-					
-					certService.deleteEmp(Cert.builder()
-							.empCd(empCd)
-							.certCd(i+1)
-							.build());
-				}
+		skillDtoList.forEach(skillDto -> {
+			
+			String state = skillDto.getState();
+			
+			Skill skill = SkillConverter.convertToModel(skillDto);
+			skill.initEmpCd(empCd);
+			
+			if(state.equals("inserted")) {
+				skillService.insertSkill(skill);
+			}else if(state.equals("updated")) {
+				skillService.updateSkill(skill);
+			}else if(state.equals("deleted")) {
+				skillService.deleteSkill(skill);
 			}
-		}
+			
+		});
 		
-		int countSkill = skillService.getCountSkillByEmpCd(
-				Skill.builder()
-				.empCd(empCd)
-				.build()
-				);
-		System.out.println(countSkill);
 		
+	}
+
+	@Override
+	public CertSkillResponseDto selectCertSkillByEmpCd(SelectCertSkillRequestDto selectCertSkillRequestDto) {
+		
+		Cert cert = Cert.builder()
+				.empCd(selectCertSkillRequestDto.getEmpCd())
+				.build();
+		
+		List<Cert> rCertList = certService.selectListCert(cert);
+		
+//		List<CertResponseDto> rCertResponseDtoList = CertConverter.
+		
+//		System.out.println(rCertList.toString());
+		
+		return null;
 	}
 
 }

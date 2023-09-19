@@ -1,5 +1,7 @@
 package kr.co.interpia.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import kr.co.interpia.domain.Cert;
@@ -34,10 +36,17 @@ public class CertServiceImpl implements CertService{
 	}
 
 	@Override
-	public void deleteEmp(Cert cert) {
+	public void deleteCert(Cert cert) {
 		
 		certMapper.deleteCert(cert);
 		
+	}
+
+	@Override
+	public List<Cert> selectListCert(Cert cert) {
+		
+		return certMapper.selectListCert(cert);
+	
 	}
 
 }

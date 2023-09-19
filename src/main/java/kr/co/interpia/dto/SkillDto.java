@@ -17,6 +17,7 @@ public class SkillDto {
 		private int skillCd;
 		private String skillNm;
 		private String skillPf;
+		private String state;
 	}
 	
 	@ToString

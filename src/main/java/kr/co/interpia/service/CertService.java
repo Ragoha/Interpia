@@ -13,6 +13,8 @@ public interface CertService {
 
 	public void updateCert(Cert cert);
 
-	public void deleteEmp(Cert build);
+	public void deleteCert(Cert cert);
+
+	public List<Cert> selectListCert(Cert cert);
 	
 }

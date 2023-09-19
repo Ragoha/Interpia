@@ -10,11 +10,11 @@
 	
 	<insert id="insertSkill">
 		INSERT INTO SKILL (
-
+			EMP_CD, SKILL_CD, SKILL_NM, SKILL_PF, INSERT_DT, MODIFY_DT
 		)
-		VALUES {
-		
-		}
+		VALUES (
+			#{empCd}, #{skillCd}, #{skillNm}, #{skillPf}, #{insertDt}, #{modifyDt}
+		)
 	</insert>
 	
 	<update id="updateSkill">
