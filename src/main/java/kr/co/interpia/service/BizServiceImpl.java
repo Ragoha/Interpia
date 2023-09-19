@@ -1,6 +1,8 @@
 package kr.co.interpia.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -8,6 +10,7 @@ import kr.co.interpia.converter.BizConverter;
 import kr.co.interpia.domain.Biz;
 import kr.co.interpia.dto.BizDto.DeleteRequestDto;
 import kr.co.interpia.dto.BizDto.InsertRequestDto;
+import kr.co.interpia.dto.BizDto.SearchRequestDto;
 import kr.co.interpia.dto.BizDto.SelectRequestDto;
 import kr.co.interpia.dto.BizDto.SelectResponseDto;
 import kr.co.interpia.dto.BizDto.UpdateRequestDto;
@@ -49,5 +52,19 @@ public class BizServiceImpl implements BizService{
 		List<Biz> biz = bizMapper.getBizList();
 		return biz;
 	}
+
+	@Override
+	public List<Biz> getBizByCoNm(SearchRequestDto bizDto) {
+		Map<String, Object> paramMap = new HashMap<>();
+		paramMap.put("keyword", "더존");
+		
+		List<Biz> bizList = bizMapper.getBizBycoNm(paramMap);
+		
+		System.out.println(bizList.toString());
+		return bizList;
+	}
+
+	
+	
 
 }

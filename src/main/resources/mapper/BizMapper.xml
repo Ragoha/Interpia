@@ -15,37 +15,45 @@
 		)
 
 	</insert>
-	
+
 	<select id="getBizList" parameterType="Biz" resultType="Biz">
-		SELECT * FROM BIZ
+		SELECT
+		CO_NM, SECTOR, BIZ_TP, PHONE, CONTACT, MOBILE FROM BIZ
 	</select>
-	
+
 	<select id="selectBiz" parameterType="Biz" resultType="Biz">
-		SELECT * FROM BIZ
+		SELECT *
+		FROM BIZ
 		WHERE CO_CD = #{coCd}
 	</select>
-	
+
 	<update id="updateBiz" parameterType="Biz">
 		UPDATE BIZ SET
-			CO_NM = #{coNm},
-			CO_NB = #{coNb},
-			CEO = #{ceo},
-			SECTOR = #{sector},
-			BIZ_TP = #{bizTp},
-			ZIP_CD = #{zipCd},
-			ADDR = #{addr},
-			ADDR_DTL = #{addrDtl},
-			PHONE = #{phone},
-			FAX = #{fax},
-			CONTACT = #{contact},
-			MOBILE = #{mobile},
-			MODIFY_DT = #{modifyDt}
+		CO_NM = #{coNm},
+		CO_NB = #{coNb},
+		CEO = #{ceo},
+		SECTOR = #{sector},
+		BIZ_TP = #{bizTp},
+		ZIP_CD = #{zipCd},
+		ADDR = #{addr},
+		ADDR_DTL = #{addrDtl},
+		PHONE = #{phone},
+		FAX = #{fax},
+		CONTACT = #{contact},
+		MOBILE = #{mobile},
+		MODIFY_DT = #{modifyDt}
 		WHERE CO_CD = #{coCd}
 	</update>
-	
+
 	<delete id="deleteBiz" parameterType="Biz">
 		DELETE FROM BIZ
-		WHERE CO_CD = #{coCd}
+		WHERE CO_CD
+		= #{coCd}
 	</delete>
+
+	<select id="getBizBycoNm" parameterType="Map" resultType="Biz">
+		SELECT * FROM BIZ WHERE CO_NM LIKE
+		CONCAT('%',#{keyword},'%');
+	</select>
 
 </mapper>

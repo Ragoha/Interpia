@@ -5,6 +5,7 @@ import java.util.List;
 import kr.co.interpia.domain.Biz;
 import kr.co.interpia.dto.BizDto.DeleteRequestDto;
 import kr.co.interpia.dto.BizDto.InsertRequestDto;
+import kr.co.interpia.dto.BizDto.SearchRequestDto;
 import kr.co.interpia.dto.BizDto.SelectRequestDto;
 import kr.co.interpia.dto.BizDto.SelectResponseDto;
 import kr.co.interpia.dto.BizDto.UpdateRequestDto;
@@ -20,5 +21,7 @@ public interface BizService {
 	void deleteBiz(DeleteRequestDto bizDto);
 	
 	SelectResponseDto selectBiz(SelectRequestDto bizDto);
+	
+	List<Biz> getBizByCoNm(SearchRequestDto bizDto);
 
 }
