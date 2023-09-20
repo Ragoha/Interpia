@@ -1,6 +1,8 @@
 package kr.co.interpia.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ import kr.co.interpia.dto.CertSkillDto.CertSkillRequestDto;
 import kr.co.interpia.dto.CertSkillDto.CertSkillResponseDto;
 import kr.co.interpia.dto.CertSkillDto.SelectCertSkillRequestDto;
 import kr.co.interpia.dto.SkillDto.SkillRequestDto;
+import kr.co.interpia.dto.SkillDto.SkillResponseDto;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -69,19 +72,34 @@ public class CertSkillServiceImpl implements CertSkillService{
 	}
 
 	@Override
-	public CertSkillResponseDto selectCertSkillByEmpCd(SelectCertSkillRequestDto selectCertSkillRequestDto) {
+	public Map<String, Object> selectListCertSkillByEmpCd(SelectCertSkillRequestDto selectCertSkillRequestDto) {
+		
+		String empCd = selectCertSkillRequestDto.getEmpCd();
 		
 		Cert cert = Cert.builder()
-				.empCd(selectCertSkillRequestDto.getEmpCd())
+				.empCd(empCd)
 				.build();
 		
-		List<Cert> rCertList = certService.selectListCert(cert);
+		List<CertResponseDto> rCertList = certService.selectListCert(cert);
 		
-//		List<CertResponseDto> rCertResponseDtoList = CertConverter.
+		System.out.println(rCertList.toString());
 		
-//		System.out.println(rCertList.toString());
 		
-		return null;
+		Skill skill = Skill.builder()
+				.empCd(empCd)
+				.build();
+		
+		List<SkillResponseDto> rSkillList = skillService.selectListSkill(skill);
+		
+		System.out.println(rSkillList.toString());
+		
+		
+		Map<String, Object> rCertSkillMap = new HashMap();
+		
+		rCertSkillMap.put("CertList", rCertList);
+		rCertSkillMap.put("SkillList", rSkillList);
+		
+		return rCertSkillMap;
 	}
 
 }

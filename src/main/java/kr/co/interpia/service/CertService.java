@@ -3,7 +3,7 @@ package kr.co.interpia.service;
 import java.util.List;
 
 import kr.co.interpia.domain.Cert;
-import kr.co.interpia.dto.CertDto.CertRequestDto;
+import kr.co.interpia.dto.CertDto.CertResponseDto;
 
 public interface CertService {
 
@@ -15,6 +15,6 @@ public interface CertService {
 
 	public void deleteCert(Cert cert);
 
-	public List<Cert> selectListCert(Cert cert);
+	public List<CertResponseDto> selectListCert(Cert cert);
 	
 }
