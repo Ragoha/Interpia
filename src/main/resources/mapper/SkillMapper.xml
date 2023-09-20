@@ -8,6 +8,12 @@
 		WHERE EMP_CD = #{empCd}
 	</select>
 	
+	<select id="selectListSkill" parameterType="Skill" resultType="Skill">
+		SELECT *
+		FROM SKILL
+		WHERE EMP_CD = #{empCd}
+	</select>
+	
 	<insert id="insertSkill">
 		INSERT INTO SKILL (
 			EMP_CD, SKILL_CD, SKILL_NM, SKILL_PF, INSERT_DT, MODIFY_DT

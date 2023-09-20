@@ -1,8 +1,12 @@
 package kr.co.interpia.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
+import kr.co.interpia.converter.SkillConverter;
 import kr.co.interpia.domain.Skill;
+import kr.co.interpia.dto.SkillDto.SkillResponseDto;
 import kr.co.interpia.mapper.SkillMapper;
 import lombok.RequiredArgsConstructor;
 
@@ -36,6 +40,13 @@ public class SkillServiceImpl implements SkillService{
 		
 		skillMapper.deleteSkill(skill);
 		
+	}
+
+	@Override
+	public List<SkillResponseDto> selectListSkill(Skill skill){
+		
+		return SkillConverter.convertToSkillResponseDtoList(skillMapper.selectListSkill(skill));
+	
 	}
 
 }
